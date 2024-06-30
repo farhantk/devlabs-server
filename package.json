@@ -4,14 +4,20 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "dev": "nodemon ./bin/www",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "migrate": "node-pg-migrate",
+    "test": "jest --setupFiles dotenv/config -i",
+    "test:watch:change": "jest --watch --setupFiles dotenv/config -i",
+    "test:cover": "jest --coverage --setupFiles dotenv/config -i"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^16.4.5",
-    "express": "~4.16.1",
+    "express": "^4.19.2",
     "http-errors": "~1.6.3",
     "joi": "^17.13.3",
     "morgan": "~1.9.1",
